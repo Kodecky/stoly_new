@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -21,11 +23,7 @@ $white-color: #FFFFFF;
     width: 100vw;
     flex-direction: column;
     position: relative;
-    /*!image from pixabay.com, author: matthiasboeckel*/
-    background-image: url("https://cdn.pixabay.com/photo/2019/09/13/19/53/table-corner-4474742_960_720.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
 
     header {
         display: flex;
@@ -48,50 +46,177 @@ $white-color: #FFFFFF;
                 font-weight: bold;
             }
         }
+
+        .burger-menu {
+            width: 50px;
+            height: 50px;
+            // background-color: $red-color;
+            position: absolute;
+            top: 0;
+            right: 20px;
+            line-height: 0;
+
+            span {
+                // color: $light-color;
+                // font-size: 60px;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(0deg);
+                height: 3px;
+                width: 50%;
+                background-color: $light-color;
+                border-radius: 1px;
+                transition: .3s;
+            }
+
+            .top-line {
+                top: 34%;
+            }
+
+            .bottom-line {
+                top: 66%;
+            }
+
+            .forward-slash {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            .no-width {
+                width: 0;
+            }
+
+            .backslash {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100vw;
+            height: calc(100vh - 50px);
+            background-color: $light-color;
+            z-index: 1;
+            // display: flex;
+            padding-top: 10px;
+            transition: .3s;
+
+            ul {
+                // display: flex;// flex-direction: column;
+                // justify-self: flex-end;
+                list-style-type: none;
+                // height: 170px;
+                width: 100%;
+                text-align: right;
+                padding-right: 50px;
+                // border-bottom: 2px solid $medium-color;
+
+                li {
+                    padding: 10px 0;
+
+                    &:nth-child(4) {
+                        border-bottom: 1px solid $medium-color;
+                    }
+
+                    &:nth-child(7) {
+                        border-bottom: 1px solid $medium-color;
+                    }
+
+                    span {
+                        display: block;
+                        text-align: center;
+                        font-size: 14px;
+                        color: $red-color;
+                        font-weight: bold;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        font-size: 25px;
+                        color: $dark-color;
+
+                        i {
+                            margin-left: 20px;
+                            color: $medium-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .hide-nav {
+            left: -100vw;
+        }
     }
 
     .hero-container {
         display: flex;
         width: 100%;
         height: 100%;
+        /*!image from pixabay.com, author: matthiasboeckel*/
+        background-image: url("https://cdn.pixabay.com/photo/2019/09/13/19/53/table-corner-4474742_960_720.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
 
-        img {
-            /*!image from pixabay.com, author: matthiasboeckel*/
-            min-height: 100%;
-            min-width: 100%;
-            // transform: translate(-50%, -50%);
-            // order: 2;
+        h1 {
+            font-size: 60px;
+            // padding-bottom: 10px;
+            color: $red-color;
         }
 
-        .hero_message {
-            position: absolute;
-            // bottom: 200px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            // right: 30%;
-            // background-color: rgba(0, 0, 0, 0.7);
-            // box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.7);// border: 1px solid rgba(0, 0, 0, 0.3);
-            // padding: 20px;
-
-            h1 {
-                font-size: 60px;
-                // padding-bottom: 10px;
-                color: $red-color;
-
-            }
-
-            h2 {
-                font-size: 30px;
-                color: $white-color;
-            }
-
-            p {
-                font-size: 15px;
-                line-height: 130%;
-            }
+        h2 {
+            font-size: 30px;
+            color: $dark-color;
+            align-self: flex-end;
+            padding-right: 40px;
         }
+
+        p {
+            font-size: 15px;
+            line-height: 130%;
+        }
+
+        // img {
+        //     /*!image from pixabay.com, author: matthiasboeckel*/
+        //     min-height: 100%;
+        //     min-width: 100%;
+        //     // transform: translate(-50%, -50%);
+        //     // order: 2;
+        // }
+
+        // .hero_message {
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     justify-content: flex-end;
+        //     position: absolute;
+
+        // h1 {
+        //     font-size: 60px;
+        //     // padding-bottom: 10px;
+        //     color: $red-color;
+        // }
+
+        // h2 {
+        //     font-size: 30px;
+        //     color: $white-color;
+        // }
+
+        // p {
+        //     font-size: 15px;
+        //     line-height: 130%;
+        // }
+        // }
 
         button {
             position: absolute;
@@ -227,7 +352,7 @@ $white-color: #FFFFFF;
             /*!image from pixabay.com, author: johnhain*/
             background-image: url(https://cdn.pixabay.com/photo/2017/01/25/22/08/handshake-2009183_960_720.png);
             background-position: center 30%;
-            background-size: 80% 90%;
+            background-size: 100% 100%;
             background-repeat: no-repeat;
 
         }
@@ -249,6 +374,7 @@ $white-color: #FFFFFF;
     flex-direction: column;
     justify-content: flex-end;
     background-color: $light-color;
+    overflow: hidden;
 
     .btn-part {
         display: flex;
@@ -301,8 +427,8 @@ $white-color: #FFFFFF;
     width: 100vw;
     flex-direction: column;
     // padding-top: 70px;
-
     justify-content: flex-end;
+    overflow: hidden;
 
     h1 {
         display: flex;

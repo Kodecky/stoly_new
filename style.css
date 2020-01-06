@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -17,11 +19,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  /*!image from pixabay.com, author: matthiasboeckel*/
-  background-image: url("https://cdn.pixabay.com/photo/2019/09/13/19/53/table-corner-4474742_960_720.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .hero header {
@@ -52,40 +50,147 @@
   font-weight: bold;
 }
 
+.hero header .burger-menu {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  line-height: 0;
+}
+
+.hero header .burger-menu span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotate(0deg);
+  height: 3px;
+  width: 50%;
+  background-color: #CFC07D;
+  border-radius: 1px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.hero header .burger-menu .top-line {
+  top: 34%;
+}
+
+.hero header .burger-menu .bottom-line {
+  top: 66%;
+}
+
+.hero header .burger-menu .forward-slash {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hero header .burger-menu .no-width {
+  width: 0;
+}
+
+.hero header .burger-menu .backslash {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.hero header nav {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-color: #CFC07D;
+  z-index: 1;
+  padding-top: 10px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.hero header nav ul {
+  list-style-type: none;
+  width: 100%;
+  text-align: right;
+  padding-right: 50px;
+}
+
+.hero header nav ul li {
+  padding: 10px 0;
+}
+
+.hero header nav ul li:nth-child(4) {
+  border-bottom: 1px solid #806A39;
+}
+
+.hero header nav ul li:nth-child(7) {
+  border-bottom: 1px solid #806A39;
+}
+
+.hero header nav ul li span {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #520d0d;
+  font-weight: bold;
+}
+
+.hero header nav ul li a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #0D0B06;
+}
+
+.hero header nav ul li a i {
+  margin-left: 20px;
+  color: #806A39;
+}
+
+.hero header .hide-nav {
+  left: -100vw;
+}
+
 .hero .hero-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
   height: 100%;
-}
-
-.hero .hero-container img {
   /*!image from pixabay.com, author: matthiasboeckel*/
-  min-height: 100%;
-  min-width: 100%;
-}
-
-.hero .hero-container .hero_message {
+  background-image: url("https://cdn.pixabay.com/photo/2019/09/13/19/53/table-corner-4474742_960_720.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
 }
 
-.hero .hero-container .hero_message h1 {
+.hero .hero-container h1 {
   font-size: 60px;
   color: #520d0d;
 }
 
-.hero .hero-container .hero_message h2 {
+.hero .hero-container h2 {
   font-size: 30px;
-  color: #FFFFFF;
+  color: #0D0B06;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding-right: 40px;
 }
 
-.hero .hero-container .hero_message p {
+.hero .hero-container p {
   font-size: 15px;
   line-height: 130%;
 }
@@ -251,7 +356,7 @@
   /*!image from pixabay.com, author: johnhain*/
   background-image: url(https://cdn.pixabay.com/photo/2017/01/25/22/08/handshake-2009183_960_720.png);
   background-position: center 30%;
-  background-size: 80% 90%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -277,6 +382,7 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   background-color: #CFC07D;
+  overflow: hidden;
 }
 
 .gallery-section .btn-part {
@@ -352,6 +458,7 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  overflow: hidden;
 }
 
 .map-section h1 {
