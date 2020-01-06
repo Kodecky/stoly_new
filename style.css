@@ -34,9 +34,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -50,36 +47,45 @@
   font-weight: bold;
 }
 
-.hero img {
-  /*image from pixabay.com, author: matthiasboeckel*/
-  min-width: 100%;
+.hero .hero-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.hero .hero-container img {
+  /*!image from pixabay.com, author: matthiasboeckel*/
   min-height: 100%;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  min-width: 100%;
 }
 
-.hero .hero_message {
+.hero .hero-container .hero_message {
   position: absolute;
-  bottom: 200px;
-  left: 0;
-  right: 30%;
-  color: #CFC07D;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-.hero .hero_message h1 {
-  font-size: 45px;
-  padding-bottom: 10px;
+.hero .hero-container .hero_message h1 {
+  font-size: 60px;
+  color: #520d0d;
 }
 
-.hero .hero_message p {
+.hero .hero-container .hero_message h2 {
+  font-size: 30px;
+  color: #FFFFFF;
+}
+
+.hero .hero-container .hero_message p {
   font-size: 15px;
   line-height: 130%;
 }
 
-.hero button {
+.hero .hero-container button {
   position: absolute;
   bottom: 100px;
   left: 50%;
@@ -93,7 +99,7 @@
   cursor: pointer;
 }
 
-.icons {
+.icons-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,15 +113,29 @@
       justify-content: space-around;
   /* background-color: #CFC07D; */
   background-color: #FFFFFF;
-  padding-top: 100px;
+  padding: 20px 0 50px 0;
 }
 
-.icons div {
+.icons-section article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  overflow: hidden;
+}
+
+.icons-section article .icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   padding: 0 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -128,23 +148,114 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
-.icons div i {
+.icons-section article .icons-container i {
   font-size: 30px;
   color: #806A39;
   padding-top: 30px;
 }
 
-.icons div h2 {
+.icons-section article .icons-container h2 {
   padding: 10px 0 5px 0;
   color: #0D0B06;
 }
 
-.icons div p {
+.icons-section article .icons-container p {
   font-size: 16px;
   line-height: 130%;
   color: #0D0B06;
+  padding-bottom: 20px;
+}
+
+.icons-section article .icons-container .icon-btn {
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+  font-size: 25px;
+  color: #806A39;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.icons-section article .more-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 101vw;
+  width: 100vw;
+  height: 100%;
+  padding: 0 50px;
+  /*!image from pexels.com, author: Pixabay*/
+  background-image: url(https://images.pexels.com/photos/162631/blacksmith-tools-shop-rustic-162631.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+  background-position: center 30%;
+  background-size: cover;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.icons-section article .more-info p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.icons-section article .more-info p span {
+  display: block;
+  color: #CFC07D;
+}
+
+.icons-section article .more-info p i {
+  position: absolute;
+  bottom: 15px;
+  right: 40px;
+  font-size: 25px;
+  color: #806A39;
+  cursor: pointer;
+}
+
+.icons-section article .calendar {
+  /*!image from pixabay.com, author: Amber_Avalona*/
+  background-image: url(https://cdn.pixabay.com/photo/2017/05/06/14/49/january-2290045_960_720.jpg);
+  background-position: center 30%;
+  background-size: cover;
+}
+
+.icons-section article .satisfaction {
+  background-color: #0D0B06;
+  /*!image from pixabay.com, author: johnhain*/
+  background-image: url(https://cdn.pixabay.com/photo/2017/01/25/22/08/handshake-2009183_960_720.png);
+  background-position: center 30%;
+  background-size: 80% 90%;
+  background-repeat: no-repeat;
+}
+
+.icons-section article .show {
+  left: 0;
+}
+
+.icons-section article .hide {
+  left: -130vw;
 }
 
 .gallery-section {
@@ -157,6 +268,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #CFC07D;
 }
 
 .gallery-section .btn-part {
@@ -232,6 +344,9 @@
       flex-basis: 50vh;
   /* width: 100%; */
   background-color: #520d0d;
+  /*!image from pexels.com, author: Engin Akyurt*/
+  background-image: url("https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -241,7 +356,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 400px;
+  height: 300px;
   width: 100vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -265,14 +380,16 @@
 
 .map-section iframe {
   width: 100%;
-  height: 70%;
+  height: 100%;
+  border-top: 1px solid #0D0B06;
+  border-bottom: 1px solid #0D0B06;
 }
 
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 300px;
+  height: 320px;
   width: 100vw;
   background-color: #806A39;
   -webkit-box-orient: vertical;
@@ -288,12 +405,13 @@ footer address {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 70%;
+  height: 220px;
   width: 80%;
   border-bottom: 1px solid #CFC07D;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 5px 0;
+  position: relative;
 }
 
 footer address div {
@@ -310,22 +428,21 @@ footer address div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  width: 35%;
+  width: 50%;
 }
 
 footer address div a {
   text-decoration: none;
   padding-top: 8px;
   color: #0D0B06;
+  font-size: 16px;
   font-weight: bold;
 }
 
 footer address div span {
   padding-top: 8px;
   color: #0D0B06;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -343,8 +460,54 @@ footer address div i {
   color: #520d0d;
 }
 
-footer div {
-  height: 50%;
+footer address .footer-logo {
+  background-color: #0D0B06;
+  border-radius: 50%;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+footer address .footer-logo span {
+  color: #CFC07D;
+  font-size: 30px;
+}
+
+footer .footer-socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
   width: 80%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .footer-socials i {
+  font-size: 22px;
+  padding: 6px;
+  color: #CFC07D;
+}
+
+footer .footer-socials span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: block;
+  font-size: 15px;
+  padding: 5px 10px;
 }
 /*# sourceMappingURL=style.css.map */

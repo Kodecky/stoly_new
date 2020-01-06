@@ -29,7 +29,7 @@ $white-color: #FFFFFF;
         background-color: $dark-color;
         align-items: center;
         justify-content: center;
-        order: 1;
+        // order: 1;
         position: fixed;
         top: 0;
         left: 0;
@@ -45,84 +45,203 @@ $white-color: #FFFFFF;
         }
     }
 
-    img {
-        /*image from pixabay.com, author: matthiasboeckel*/
-        min-width: 100%;
-        min-height: 100%;
-        order: 2;
-    }
+    .hero-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
 
-    .hero_message {
-        position: absolute;
-        bottom: 200px;
-        left: 0;
-        right: 30%;
-        color: $light-color;
-        background-color: rgba(0, 0, 0, 0.7);
-        // box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.7);// border: 1px solid rgba(0, 0, 0, 0.3);
-        padding: 20px;
-
-        h1 {
-            font-size: 45px;
-            padding-bottom: 10px;
+        img {
+            /*!image from pixabay.com, author: matthiasboeckel*/
+            min-height: 100%;
+            min-width: 100%;
+            // transform: translate(-50%, -50%);
+            // order: 2;
         }
 
-        p {
-            font-size: 15px;
-            line-height: 130%;
-        }
-    }
+        .hero_message {
+            position: absolute;
+            // bottom: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            // right: 30%;
+            // background-color: rgba(0, 0, 0, 0.7);
+            // box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.7);// border: 1px solid rgba(0, 0, 0, 0.3);
+            // padding: 20px;
 
-    button {
-        position: absolute;
-        bottom: 100px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 20px;
-        // background-color: rgba(0, 0, 0, 0.7);
-        background-color: $red-color;
-        color: $light-color;
-        padding: 10px;
-        // border: 2px solid $blue-color;
-        border-radius: 10px;
-        cursor: pointer;
+            h1 {
+                font-size: 60px;
+                // padding-bottom: 10px;
+                color: $red-color;
+
+            }
+
+            h2 {
+                font-size: 30px;
+                color: $white-color;
+            }
+
+            p {
+                font-size: 15px;
+                line-height: 130%;
+            }
+        }
+
+        button {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            // background-color: rgba(0, 0, 0, 0.7);
+            background-color: $red-color;
+            color: $light-color;
+            padding: 10px;
+            // border: 2px solid $blue-color;
+            border-radius: 10px;
+            cursor: pointer;
+        }
     }
 }
 
-.icons {
+.icons-section {
     display: flex;
+    // height: 650px;
     height: 650px;
     width: 100vw;
     flex-direction: column;
     justify-content: space-around;
     /* background-color: #CFC07D; */
     background-color: $white-color;
-    padding-top: 100px;
+    // padding-top: 100px;
+    padding: 20px 0 50px 0;
 
-    div {
+    article {
         display: flex;
         flex-basis: 30%;
-        padding: 0 50px;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: $white-color;
+        // padding: 0 50px;
+        flex-direction: row;
+        position: relative;
+        overflow: hidden;
 
-        i {
-            font-size: 30px;
-            color: $medium-color;
-            padding-top: 30px;
+        .icons-container {
+            display: flex;
+            flex-basis: 100%;
+            padding: 0 50px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: $white-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .3s;
+
+            i {
+                font-size: 30px;
+                color: $medium-color;
+                padding-top: 30px;
+            }
+
+            h2 {
+                padding: 10px 0 5px 0;
+                color: $dark-color;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 130%;
+                color: $dark-color;
+                padding-bottom: 20px;
+            }
+
+            // button {
+            //     align-self: flex-end;
+            //     background-color: $light-color;
+            //     border: 1px solid $dark-color;
+            //     padding: 2px 5px;
+            //     border-radius: 5px;
+            //     cursor: pointer;
+            //     transition: .3s;
+            // }
+            .icon-btn {
+                position: absolute;
+                bottom: 0;
+                right: 40px;
+                font-size: 25px;
+                color: $medium-color;
+                cursor: pointer;
+                padding: 5px;
+                // border: 2px solid $medium-color;// border-radius: 50%;
+            }
         }
 
-        h2 {
-            padding: 10px 0 5px 0;
-            color: $dark-color;
+        .more-info {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 101vw;
+            width: 100vw;
+            height: 100%;
+            padding: 0 50px;
+            /*!image from pexels.com, author: Pixabay*/
+            background-image: url(https://images.pexels.com/photos/162631/blacksmith-tools-shop-rustic-162631.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+            background-position: center 30%;
+            background-size: cover;
+            transition: .3s;
+
+            p {
+                display: flex;
+                align-items: center;
+                padding: 0 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.7);
+
+                span {
+                    display: block;
+                    color: $light-color;
+                }
+
+                i {
+                    position: absolute;
+                    bottom: 15px;
+                    right: 40px;
+                    font-size: 25px;
+                    color: $medium-color;
+                    cursor: pointer;
+                }
+            }
         }
 
-        p {
-            font-size: 16px;
-            line-height: 130%;
-            color: $dark-color;
+        .calendar {
+            /*!image from pixabay.com, author: Amber_Avalona*/
+            background-image: url(https://cdn.pixabay.com/photo/2017/05/06/14/49/january-2290045_960_720.jpg);
+            background-position: center 30%;
+            background-size: cover;
+        }
+
+        .satisfaction {
+            background-color: $dark-color;
+            /*!image from pixabay.com, author: johnhain*/
+            background-image: url(https://cdn.pixabay.com/photo/2017/01/25/22/08/handshake-2009183_960_720.png);
+            background-position: center 30%;
+            background-size: 80% 90%;
+            background-repeat: no-repeat;
+
+        }
+
+        .show {
+            left: 0;
+        }
+
+        .hide {
+            left: -130vw;
         }
     }
 }
@@ -132,6 +251,7 @@ $white-color: #FFFFFF;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
+    background-color: $light-color;
 
     .btn-part {
         display: flex;
@@ -188,13 +308,16 @@ $white-color: #FFFFFF;
         flex-basis: 50vh;
         /* width: 100%; */
         background-color: rgb(82, 13, 13);
+        /*!image from pexels.com, author: Engin Akyurt*/
+        background-image: url("https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        background-size: cover;
         order: 2;
     }
 }
 
 .map-section {
     display: flex;
-    height: 400px;
+    height: 300px;
     width: 100vw;
     flex-direction: column;
     // padding-top: 70px;
@@ -210,13 +333,15 @@ $white-color: #FFFFFF;
 
     iframe {
         width: 100%;
-        height: 70%;
+        height: 100%;
+        border-top: 1px solid $dark-color;
+        border-bottom: 1px solid $dark-color;
     }
 }
 
 footer {
     display: flex;
-    height: 300px;
+    height: 320px;
     width: 100vw;
     background-color: $medium-color;
     flex-direction: column;
@@ -224,30 +349,33 @@ footer {
 
     address {
         display: flex;
-        height: 70%;
+        height: 220px;
         width: 80%;
         border-bottom: 1px solid $light-color;
         flex-wrap: wrap;
         padding: 5px 0;
+        position: relative;
 
         div {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex-grow: 1;
-            width: 35%;
+            // flex-grow: 1;
+            width: 50%;
 
             a {
                 text-decoration: none;
                 padding-top: 8px;
                 color: $dark-color;
+                font-size: 16px;
                 font-weight: bold;
             }
 
             span {
                 padding-top: 8px;
                 color: $dark-color;
+                font-size: 16px;
                 font-weight: bold;
             }
 
@@ -263,11 +391,47 @@ footer {
                 color: $red-color;
             }
         }
+
+        .footer-logo {
+            background-color: $dark-color;
+            // background-color: $red-color;
+            border-radius: 50%;
+            text-align: center;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translateY(50%);
+
+            span {
+                color: $light-color;
+                font-size: 30px;
+
+            }
+        }
     }
 
-    div {
-        height: 50%;
+    .footer-socials {
+        display: flex;
+        height: 100px;
         width: 80%;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        i {
+            font-size: 22px;
+            padding: 6px;
+            color: $light-color;
+        }
+
+        span {
+            display: flex;
+            display: block;
+            font-size: 15px;
+            padding: 5px 10px;
+        }
     }
 }
 
