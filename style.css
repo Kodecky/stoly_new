@@ -17,6 +17,11 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  /*!image from pixabay.com, author: matthiasboeckel*/
+  background-image: url("https://cdn.pixabay.com/photo/2019/09/13/19/53/table-corner-4474742_960_720.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero header {
@@ -263,11 +268,14 @@
   display: -ms-flexbox;
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 700px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   background-color: #CFC07D;
 }
 
@@ -290,29 +298,6 @@
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-}
-
-.gallery-section .btn-part .horizontal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 50px 0 20px 0;
-}
-
-.gallery-section .btn-part .horizontal hr {
-  height: 1px;
-  width: 80px;
-  background-color: #806A39;
-  border-radius: 50%;
-}
-
-.gallery-section .btn-part .horizontal i {
-  font-size: 30px;
-  color: #806A39;
-  padding: 0 15px;
 }
 
 .gallery-section .btn-part h1 {
@@ -340,13 +325,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 50vh;
-      flex-basis: 50vh;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
   /* width: 100%; */
   background-color: #520d0d;
   /*!image from pexels.com, author: Engin Akyurt*/
   background-image: url("https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-size: cover;
+  background-position: 0 50%;
+  background-size: 130% 100%;
+  background-repeat: no-repeat;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -435,14 +422,14 @@ footer address div a {
   text-decoration: none;
   padding-top: 8px;
   color: #0D0B06;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
 footer address div span {
   padding-top: 8px;
   color: #0D0B06;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -464,8 +451,8 @@ footer address .footer-logo {
   background-color: #0D0B06;
   border-radius: 50%;
   text-align: center;
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -475,7 +462,7 @@ footer address .footer-logo {
 
 footer address .footer-logo span {
   color: #CFC07D;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 footer .footer-socials {
@@ -502,12 +489,18 @@ footer .footer-socials i {
   color: #CFC07D;
 }
 
+@media (max-width: 600px) {
+  footer .footer-socials i {
+    font-size: 18px;
+  }
+}
+
 footer .footer-socials span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   display: block;
-  font-size: 15px;
+  font-size: 14px;
   padding: 5px 10px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -21,6 +21,11 @@ $white-color: #FFFFFF;
     width: 100vw;
     flex-direction: column;
     position: relative;
+    /*!image from pixabay.com, author: matthiasboeckel*/
+    background-image: url("https://cdn.pixabay.com/photo/2019/09/13/19/53/table-corner-4474742_960_720.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     header {
         display: flex;
@@ -156,15 +161,6 @@ $white-color: #FFFFFF;
                 padding-bottom: 20px;
             }
 
-            // button {
-            //     align-self: flex-end;
-            //     background-color: $light-color;
-            //     border: 1px solid $dark-color;
-            //     padding: 2px 5px;
-            //     border-radius: 5px;
-            //     cursor: pointer;
-            //     transition: .3s;
-            // }
             .icon-btn {
                 position: absolute;
                 bottom: 0;
@@ -249,8 +245,9 @@ $white-color: #FFFFFF;
 .gallery-section {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 700px;
     flex-direction: column;
+    justify-content: flex-end;
     background-color: $light-color;
 
     .btn-part {
@@ -260,25 +257,6 @@ $white-color: #FFFFFF;
         justify-content: center;
         align-items: center;
         order: 1;
-
-        .horizontal {
-            display: flex;
-            align-items: center;
-            padding: 50px 0 20px 0;
-
-            hr {
-                height: 1px;
-                width: 80px;
-                background-color: $medium-color;
-                border-radius: 50%;
-            }
-
-            i {
-                font-size: 30px;
-                color: $medium-color;
-                padding: 0 15px;
-            }
-        }
 
         h1 {
             color: $dark-color;
@@ -305,12 +283,14 @@ $white-color: #FFFFFF;
 
     .slider {
         display: flex;
-        flex-basis: 50vh;
+        flex-basis: 50%;
         /* width: 100%; */
         background-color: rgb(82, 13, 13);
         /*!image from pexels.com, author: Engin Akyurt*/
         background-image: url("https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-        background-size: cover;
+        background-position: 0 50%;
+        background-size: 130% 100%;
+        background-repeat: no-repeat;
         order: 2;
     }
 }
@@ -368,14 +348,14 @@ footer {
                 text-decoration: none;
                 padding-top: 8px;
                 color: $dark-color;
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: bold;
             }
 
             span {
                 padding-top: 8px;
                 color: $dark-color;
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: bold;
             }
 
@@ -397,8 +377,8 @@ footer {
             // background-color: $red-color;
             border-radius: 50%;
             text-align: center;
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             position: absolute;
             right: 0;
             bottom: 0;
@@ -406,7 +386,7 @@ footer {
 
             span {
                 color: $light-color;
-                font-size: 30px;
+                font-size: 25px;
 
             }
         }
@@ -424,12 +404,16 @@ footer {
             font-size: 22px;
             padding: 6px;
             color: $light-color;
+
+            @media (max-width: 600px) {
+                font-size: 18px;
+            }
         }
 
         span {
             display: flex;
             display: block;
-            font-size: 15px;
+            font-size: 14px;
             padding: 5px 10px;
         }
     }
