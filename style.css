@@ -103,7 +103,7 @@
   top: 50px;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 50px);
+  min-height: calc(100vh - 50px);
   background-color: #CFC07D;
   z-index: 1;
   padding-top: 10px;
@@ -140,7 +140,7 @@
 
 .hero header nav ul li a {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 18px;
   color: #0D0B06;
 }
 
