@@ -403,9 +403,13 @@ $white-color: #FFFFFF;
             border-radius: 5px;
             // border: 2px solid $blue-color;
             border: none;
-            color: $light-color;
             background-color: $red-color;
             cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: $light-color;
+            }
         }
     }
 
