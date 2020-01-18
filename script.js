@@ -63,3 +63,26 @@ burgerBtn.addEventListener('click', () => {
     bottomLine.classList.toggle('forward-slash');
     burgerNavCard.classList.toggle('hide-nav');
 })
+
+//gallery section
+const bigCardContainer = document.querySelector('.big-card-container');
+const bigCard = document.querySelector('.big-card-container .big-card');
+const firstImg = document.querySelector('.gallery-section .first');
+
+firstImg.addEventListener('click', () => {
+    bigCardContainer.style.display = 'block';
+    window.setTimeout(function () {
+        bigCardContainer.style.opacity = '1';
+    }, 100);
+    bigCard.style.backgroundImage = 'url(img/big-cards-mobile/rectangular-brown-wooden-dining-table-and-chairs-set-2092058.jpg)';
+})
+
+const closeCard = document.querySelector('.big-card i');
+
+closeCard.addEventListener('click', () => {
+    window.setTimeout(function () {
+        bigCardContainer.style.display = 'none';
+    }, 1000);
+    bigCardContainer.style.opacity = '0';
+
+})
