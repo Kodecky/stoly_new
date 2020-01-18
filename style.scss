@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+// body {
+//     overflow: hidden;
+// }
+
 // colors------------------------------------------------
 $dark-color: #0D0B06;
 $medium-color: #806A39;
@@ -369,61 +373,130 @@ $white-color: #FFFFFF;
     }
 }
 
+// .gallery-section {
+//     display: flex;
+//     width: 100vw;
+//     height: 700px;
+//     flex-direction: column;
+//     justify-content: flex-end;
+//     background-color: $light-color;
+//     overflow: hidden;
+
+//     .btn-part {
+//         display: flex;
+//         flex-basis: 50vh;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         order: 1;
+
+//         h1 {
+//             color: $dark-color;
+//         }
+
+//         p {
+//             font-size: 16px;
+//             line-height: 130%;
+//             padding: 20px 50px;
+//             color: $dark-color;
+//         }
+
+//         button {
+//             font-size: 15px;
+//             padding: 10px 15px;
+//             border-radius: 5px;
+//             // border: 2px solid $blue-color;
+//             border: none;
+//             background-color: $red-color;
+//             cursor: pointer;
+
+//             a {
+//                 text-decoration: none;
+//                 color: $light-color;
+//             }
+//         }
+//     }
+
+//     .slider {
+//         display: flex;
+//         flex-basis: 50%;
+//         /* width: 100%; */
+//         background-color: rgb(82, 13, 13);
+//         /*!image from pexels.com, author: Engin Akyurt*/
+//         background-image: url("https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+//         background-position: 0 50%;
+//         background-size: 130% 100%;
+//         background-repeat: no-repeat;
+//         order: 2;
+//     }
+// }
+
 .gallery-section {
-    display: flex;
-    width: 100vw;
-    height: 700px;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-color: $light-color;
-    overflow: hidden;
+    display: grid;
+    // width: 100vw;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    gap: 5px;
+    grid-auto-flow: column dense;
+    overflow-y: scroll;
 
-    .btn-part {
-        display: flex;
-        flex-basis: 50vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        order: 1;
+    .img-mini-card {
+        overflow: hidden;
 
-        h1 {
-            color: $dark-color;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 130%;
-            padding: 20px 50px;
-            color: $dark-color;
-        }
-
-        button {
-            font-size: 15px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            // border: 2px solid $blue-color;
-            border: none;
-            background-color: $red-color;
-            cursor: pointer;
-
-            a {
-                text-decoration: none;
-                color: $light-color;
-            }
+        img {
+            width: 100%;
+            border-radius: 10px;
         }
     }
 
-    .slider {
-        display: flex;
-        flex-basis: 50%;
-        /* width: 100%; */
-        background-color: rgb(82, 13, 13);
-        /*!image from pexels.com, author: Engin Akyurt*/
-        background-image: url("https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-        background-position: 0 50%;
-        background-size: 130% 100%;
-        background-repeat: no-repeat;
-        order: 2;
+    .first {
+        grid-column: 1;
+        grid-row: 1;
+        grid-row-end: 2;
+    }
+
+    .second {
+        grid-column: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+    }
+
+    .third {
+        grid-column: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        // transform: translateY(-135px);
+    }
+
+    .fourth {
+        grid-column: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .fifth {
+        grid-column: 5;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .sixth {
+        grid-column: 2;
+        // grid-row-start: 3;
+    }
+
+    .seventh {
+        grid-column: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .eighth {
+        grid-column: 1;
+        grid-row-start: 2;
+        grid-row-end: 4;
     }
 }
 
